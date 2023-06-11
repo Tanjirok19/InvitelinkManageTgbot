@@ -195,7 +195,7 @@ def main():
     updater = Updater(token=TOKEN, use_context=True, defaults=defaults)
     dispatcher = updater.dispatcher
 
-    start_handler = CommandHandler('run', run_management)
+    run_handler = CommandHandler('run', run_management)
     stop_handler = CommandHandler('stop', stop_management)
     set_interval_handler = CommandHandler('setinterval', set_time_interval)
     add_channel_handler = CommandHandler('addchannel', add_channel)
