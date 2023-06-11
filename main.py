@@ -203,6 +203,7 @@ def main():
     reset_handler = CommandHandler('reset', reset_command)
     users_handler = CommandHandler('users', users_command)
     help_handler = CommandHandler('help', help_command)
+    dispatcher.add_handler(CommandHandler("clear", clear_command))
 
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(stop_handler)
