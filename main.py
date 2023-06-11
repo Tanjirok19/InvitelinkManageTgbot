@@ -123,7 +123,7 @@ def manage_invite_links(context: CallbackContext):
     send_or_edit_main_channel_message(message_content)
 
 
-def start_management(update: Update, context: CallbackContext):
+def run_management(update: Update, context: CallbackContext):
     if 'job' in context.chat_data:
         update.message.reply_text("Invite link management is already running.")
     else:
@@ -195,7 +195,7 @@ def main():
     updater = Updater(token=TOKEN, use_context=True, defaults=defaults)
     dispatcher = updater.dispatcher
 
-    start_handler = CommandHandler('start', start_management)
+    start_handler = CommandHandler('run', run_management)
     stop_handler = CommandHandler('stop', stop_management)
     set_interval_handler = CommandHandler('setinterval', set_time_interval)
     add_channel_handler = CommandHandler('addchannel', add_channel)
@@ -205,7 +205,7 @@ def main():
     help_handler = CommandHandler('help', help_command)
     dispatcher.add_handler(CommandHandler("clear", clear_command))
 
-    dispatcher.add_handler(start_handler)
+    dispatcher.add_handler(run_handler)
     dispatcher.add_handler(stop_handler)
     dispatcher.add_handler(set_interval_handler)
     dispatcher.add_handler(add_channel_handler)
