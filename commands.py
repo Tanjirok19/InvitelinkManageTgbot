@@ -26,5 +26,20 @@ def reset_command(update: Update, context: CallbackContext):
     with open('channel.txt', 'w') as file:
         file.truncate(0)
     update.message.reply_text("The channel.txt file has been reset.")
+    
+    
+def clear_command(update: Update, context: CallbackContext):
+    # Read the channel.txt file
+    with open('channel.txt', 'r') as file:
+        channels = file.readlines()
+    
+    # Remove the revoked links from the channel.txt file
+    updated_channels = [channel for channel in channels if 'revoked' not in channel]
+    
+    # Write the updated channel list back to the file
+    with open('channel.txt', 'w') as file:
+        file.writelines(updated_channels)
+    
+    update.message.reply_text("The revoked links have been cleared.")
 
 
