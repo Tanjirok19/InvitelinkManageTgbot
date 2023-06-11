@@ -87,7 +87,7 @@ def create_message_content(channel_data):
 
         if invite_link:
             channel_name_emoji = emoji.demojize(channel_name)
-            channel_entry = f"{channel_name_emoji}:\n{invite_link}\n{additional_text}\n\n"
+            channel_entry = f"{channel_name_emoji}:\n<b><u>{invite_link}</u></b>\n{additional_text}\n\n"
             message_content += channel_entry
 
     return message_content
