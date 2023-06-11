@@ -7,7 +7,7 @@ import emoji
 import re
 from telegram import ParseMode, Update
 from telegram.ext import Updater, CommandHandler, CallbackContext,  Defaults
-from commands import help_command, users_command, reset_command
+from commands import help_command, users_command, reset_command ,clear_command
 
 # Telegram Bot API token
 TOKEN = '6267402462:AAHzWLlusljWq-8bdG2fraAl_dsuk05D730'
