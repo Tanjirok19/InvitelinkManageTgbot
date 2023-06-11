@@ -7,6 +7,7 @@ import emoji
 import re
 from telegram import ParseMode, Update
 from telegram.ext import Updater, CommandHandler, CallbackContext,  Defaults
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from commands import help_command, users_command, reset_command ,clear_command
 
 # Telegram Bot API token
@@ -186,8 +187,17 @@ def remove_channel(update: Update, context: CallbackContext):
                 return
 
         update.message.reply_text("Channel not found.")
+        
+def start_command(update: Update, context: CallbackContext):
+# Generate the inline keyboard button for the admin contact
+    admin_button = InlineKeyboardButton("👨🏻‍💻Developer", url="https://t.me/TanjiroK77")
 
+    # Generate the inline keyboard markup
+    reply_markup = InlineKeyboardMarkup([[admin_button]])
 
+    # Send the unauthorized access message to the user
+    update.message.reply_text("This Is Invite Link Manager Bot\n Here You Can Manage Your Channels \n to Update its Private Link Regularly !🤖", reply_markup=reply_markup)
+    
 def main():
     defaults = Defaults(parse_mode=ParseMode.HTML)
     global channel_data
@@ -204,6 +214,8 @@ def main():
     users_handler = CommandHandler('users', users_command)
     help_handler = CommandHandler('help', help_command)
     dispatcher.add_handler(CommandHandler("clear", clear_command))
+    
+    dispatcher.add_handler(CommandHandler("start", start_command))
 
     dispatcher.add_handler(run_handler)
     dispatcher.add_handler(stop_handler)
