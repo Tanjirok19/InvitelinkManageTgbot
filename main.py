@@ -14,7 +14,7 @@ from commands import help_command, users_command, reset_command ,clear_command
 TOKEN = '6267402462:AAHzWLlusljWq-8bdG2fraAl_dsuk05D730'
 
 # Main channel ID where the bot will send the invite links
-MAIN_CHANNEL_ID = '@aaokabh'
+MAIN_CHANNEL_ID = '@Extraction_2_Movie_Hindi_Dub'
 
 CHANNEL_DATA_FILE = 'channel.txt'
 
@@ -87,7 +87,7 @@ def create_message_content(channel_data):
 
         if invite_link:
             channel_name_emoji = emoji.demojize(channel_name)
-            channel_entry = f"{channel_name_emoji}:\n<b><u>{invite_link}</u></b>\n{additional_text}\n\n"
+            channel_entry = f"{channel_name_emoji}:\n\n<b><u>{invite_link}</u></b>\n{additional_text}\n\n"
             message_content += channel_entry
 
     return message_content
