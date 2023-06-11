@@ -26,4 +26,5 @@ def reset_command(update: Update, context: CallbackContext):
     with open('channel.txt', 'w') as file:
         file.write('')
     update.message.reply_text("The channel.txt file has been reset.")
+    update_channel_data_file()
 
