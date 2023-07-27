@@ -14,7 +14,7 @@ from commands import help_command, users_command, reset_command ,clear_command
 TOKEN = '6267402462:AAHzWLlusljWq-8bdG2fraAl_dsuk05D730'
 
 # Main channel ID where the bot will send the invite links
-MAIN_CHANNEL_ID = '@Extraction_2_Movie_Hindi_Dub'
+MAIN_CHANNEL_ID = '@UpdatesNBackup'
 
 CHANNEL_DATA_FILE = 'channel.txt'
 
